@@ -24,7 +24,7 @@ y = df[['price']]
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 25, random_state = 101)
 
-regr = RandomForestRegressor(n_estimators = 10, max_depth = 10, random_state = 101) 
+regr = RandomForestRegressor(n_estimators = 10, max_depth = 10, random_state = 201) 
 regr.fit(x_train, y_train.values.ravel())
 
 predictions = regr.predict(x_test)
@@ -34,3 +34,21 @@ result['price'] = y_test
 result['predictions'] = predictions.tolist()
 
 print(result.to_string())
+
+x_asix = x_test.carat
+
+plt.scatter(x_asix, y_test, c = 'b', alpha =0.5, marker = '.', label = 'Real')
+plt.scatter(x_asix, predictions, c = 'r', alpha =0.5, marker = '.', label = 'Predicted')
+plt.xlabel('Carat')
+plt.ylabel('Price')
+plt.grid(color = '#D3D3D3', linestyle = 'solid')
+plt.legend(loc = 'lower right')
+plt.show()
+
+
+
+
+
+
+
+
