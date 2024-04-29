@@ -17,7 +17,7 @@ for i in range(train_set_count):
     c = randint (0, train_set_limit)
     pp = a+ (2*b) + (3*c)
     train_input.append([a,b,c])
-    train_output.append(op)
+    train_output.append(pp)
     
 for i in range(20):
     print(train_input[i], train_output[i]) 
